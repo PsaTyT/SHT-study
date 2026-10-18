@@ -30,13 +30,9 @@ Planned additions:
 ## Current state
 
 ### Iteration 1 — skeleton and static list
-
 ### Iteration 2 — in-memory interactivity
-
 ### Iteration 3 — persistent storage with Room
-
 ### Iteration 4 — ViewModel and cleaner architecture
-
 ### Iteration 5 — completion history and data model fix
 
 ### Iteration 6 — current streak calculation
