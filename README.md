@@ -10,6 +10,8 @@ and (eventually) streaks and statistics.
 This is a learning project, built from scratch, step by step. Each iteration
 is a working version of the app. Don’t throw tomatoes at me.
 
+and I'm lazy...yeee... 
+
 ## Tech stack
 
 - **Language:** Kotlin
