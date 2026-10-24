@@ -9,7 +9,7 @@ and (eventually) streaks and statistics.
 
 This is a learning project, built from scratch, step by step. Each iteration
 is a working version of the app. Don’t throw tomatoes at me.
-12345
+123456
 ## Tech stack
 
 - **Language:** Kotlin
