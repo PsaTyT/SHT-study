@@ -16,8 +16,13 @@ object StreakCalculator {
     fun calculateStreak(dates: List<LocalDate>, today: LocalDate): Int {
         if (dates.isEmpty()) return 0
 
-        // Убираем дубликаты и сортируем по убыванию (сначала свежие)
-        val unique = dates.distinct().sortedDescending()
+        // Игнорируем будущие даты, убираем дубликаты и сортируем по убыванию
+        val unique = dates
+            .filter { it <= today }
+            .distinct()
+            .sortedDescending()
+
+        if (unique.isEmpty()) return 0
 
         // Если самое свежее выполнение старше вчера — стрик прерван
         val latest = unique.first()
