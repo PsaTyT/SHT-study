@@ -7,8 +7,6 @@ import java.time.LocalDate
 
 class StreakCalculatorTest {
 
-    // Фиксированная "сегодня" для всех тестов — чтобы результаты не зависели
-    // от реальной даты на компьютере
     private val today = LocalDate.of(2026, 10, 16)
 
     @Test
