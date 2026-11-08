@@ -26,7 +26,7 @@ abstract class HabitDatabase : RoomDatabase() {
 
         private val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(db: SupportSQLiteDatabase) {
-                // 1. Создаём новую таблицу completions
+
                 db.execSQL("""
                     CREATE TABLE IF NOT EXISTS completions (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -39,14 +39,12 @@ abstract class HabitDatabase : RoomDatabase() {
                 db.execSQL("CREATE INDEX IF NOT EXISTS index_completions_habitId ON completions(habitId)")
                 db.execSQL("CREATE INDEX IF NOT EXISTS index_completions_date ON completions(date)")
 
-                // 2. Переносим doneToday=1 в completions как запись за сегодня
                 val today = LocalDate.now().toEpochDay()
                 db.execSQL("""
                     INSERT INTO completions (habitId, date)
                     SELECT id, $today FROM habits WHERE doneToday = 1
                 """.trimIndent())
 
-                // 3. Пересоздаём habits без doneToday
                 db.execSQL("""
                     CREATE TABLE IF NOT EXISTS habits_new (
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
