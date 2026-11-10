@@ -4,15 +4,6 @@ import java.time.LocalDate
 
 object StreakCalculator {
 
-    /**
-     * Считает текущий стрик — сколько дней подряд привычка выполнялась,
-     * включая сегодня или вчера.
-     *
-     * Если последнее выполнение было раньше вчера — стрик равен 0.
-     *
-     * @param dates список дат выполнений (в любом порядке, дубликаты допустимы)
-     * @param today сегодняшняя дата
-     */
     fun calculateStreak(dates: List<LocalDate>, today: LocalDate): Int {
         if (dates.isEmpty()) return 0
 
