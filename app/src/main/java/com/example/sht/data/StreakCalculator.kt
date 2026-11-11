@@ -7,7 +7,6 @@ object StreakCalculator {
     fun calculateStreak(dates: List<LocalDate>, today: LocalDate): Int {
         if (dates.isEmpty()) return 0
 
-        // Игнорируем будущие даты, убираем дубликаты и сортируем по убыванию
         val unique = dates
             .filter { it <= today }
             .distinct()
