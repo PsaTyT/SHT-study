@@ -14,7 +14,6 @@ object StreakCalculator {
 
         if (unique.isEmpty()) return 0
 
-        // Если самое свежее выполнение старше вчера — стрик прерван
         val latest = unique.first()
         if (latest.isBefore(today.minusDays(1))) return 0
 
